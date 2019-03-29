@@ -1,8 +1,5 @@
 {
-  "name": "jsnspr-fd-be",
-  "private": true,
-  "version": "0.1.0",
-  "description": "A Strapi application.",
+  "name": "backend",
   "main": "./server.js",
   "scripts": {
     "setup": "cd admin && npm run setup",
@@ -19,28 +16,24 @@
     "eslint-plugin-react": "^7.7.0"
   },
   "dependencies": {
-    "koa": "^2.7.0",
     "lodash": "^4.17.5",
-    "strapi": "^1.6.4",
-    "strapi-hook-mongoose": "3.0.0-alpha.13",
-    "stripe": "^6.28.0"
+    "strapi": "3.0.0-alpha.19",
+    "strapi-hook-mongoose": "3.0.0-alpha.19"
   },
   "author": {
-    "name": "j",
-    "email": "",
-    "url": ""
+    "name": "Strapi",
+    "email": "hi@strapi.io"
   },
   "maintainers": [
     {
-      "name": "j",
-      "email": "",
-      "url": ""
+      "name": "pierreburgy",
+      "email": "pierre@strapi.io"
+    },
+    {
+      "name": "lauriejim",
+      "email": "jim@strapi.io"
     }
   ],
-  "strapi": {
-    "packageManager": "npm",
-    "uuid": "7fee43aa-b166-4665-9b9e-fcb1d9bb6878"
-  },
   "engines": {
     "node": ">= 10.0.0",
     "npm": ">= 6.0.0"
