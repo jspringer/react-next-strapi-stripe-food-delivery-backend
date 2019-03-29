@@ -1,0 +1,19 @@
+{
+  "defaultConnection": "default",
+  "connections": {
+    "default": {
+      "connector": "strapi-hook-mongoose",
+      "settings": {
+        "client": "mongo",
+        "host": "ds139979.mlab.com",
+        "port": "39979",
+        "database": "heroku_kqh5glbk",
+        "username": "heroku_kqh5glbk",
+        "password": "7qk5rne02s2qqq6ep5jplppee9"
+      },
+      "options": {
+        "authenticationDatabase": "heroku_kqh5glbk"
+      }
+    }
+  }
+}
