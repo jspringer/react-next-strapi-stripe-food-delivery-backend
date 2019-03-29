@@ -85,8 +85,6 @@ type deleteUserPayload {
 
 type Dish {
   _id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
   name: String
   description: String
   image: UploadFile
@@ -129,11 +127,6 @@ type DishConnection_id {
   connection: DishConnection
 }
 
-type DishConnectionCreatedAt {
-  key: DateTime
-  connection: DishConnection
-}
-
 type DishConnectionDescription {
   key: String
   connection: DishConnection
@@ -159,15 +152,8 @@ type DishConnectionRestaurant {
   connection: DishConnection
 }
 
-type DishConnectionUpdatedAt {
-  key: DateTime
-  connection: DishConnection
-}
-
 type DishGroupBy {
   _id: [DishConnection_id]
-  createdAt: [DishConnectionCreatedAt]
-  updatedAt: [DishConnectionUpdatedAt]
   name: [DishConnectionName]
   description: [DishConnectionDescription]
   image: [DishConnectionImage]
@@ -259,7 +245,7 @@ The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://
 """
 scalar JSON
 
-union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dish | createDishPayload | updateDishPayload | deleteDishPayload | DishConnection | DishAggregator | DishAggregatorSum | DishAggregatorAvg | DishAggregatorMin | DishAggregatorMax | DishGroupBy | DishConnection_id | DishConnectionCreatedAt | DishConnectionUpdatedAt | DishConnectionName | DishConnectionDescription | DishConnectionImage | DishConnectionPrice | DishConnectionRestaurant | Order | createOrderPayload | updateOrderPayload | deleteOrderPayload | OrderConnection | OrderAggregator | OrderAggregatorSum | OrderAggregatorAvg | OrderAggregatorMin | OrderAggregatorMax | OrderGroupBy | OrderConnection_id | OrderConnectionCreatedAt | OrderConnectionUpdatedAt | OrderConnectionAddress | OrderConnectionCity | OrderConnectionDishes | OrderConnectionAmount | Restaurant | createRestaurantPayload | updateRestaurantPayload | deleteRestaurantPayload | RestaurantConnection | RestaurantAggregator | RestaurantGroupBy | RestaurantConnection_id | RestaurantConnectionCreatedAt | RestaurantConnectionUpdatedAt | RestaurantConnectionName | RestaurantConnectionDescription | RestaurantConnectionImage | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionCreatedAt | UploadFileConnectionUpdatedAt | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
+union Morph = UsersPermissionsMe | UsersPermissionsMeRole | Dish | createDishPayload | updateDishPayload | deleteDishPayload | DishConnection | DishAggregator | DishAggregatorSum | DishAggregatorAvg | DishAggregatorMin | DishAggregatorMax | DishGroupBy | DishConnection_id | DishConnectionName | DishConnectionDescription | DishConnectionImage | DishConnectionPrice | DishConnectionRestaurant | Order | createOrderPayload | updateOrderPayload | deleteOrderPayload | OrderConnection | OrderAggregator | OrderAggregatorSum | OrderAggregatorAvg | OrderAggregatorMin | OrderAggregatorMax | OrderGroupBy | OrderConnection_id | OrderConnectionAddress | OrderConnectionCity | OrderConnectionDishes | OrderConnectionAmount | Restaurant | createRestaurantPayload | updateRestaurantPayload | deleteRestaurantPayload | RestaurantConnection | RestaurantAggregator | RestaurantGroupBy | RestaurantConnection_id | RestaurantConnectionName | RestaurantConnectionDescription | RestaurantConnectionImage | UploadFile | UploadFileConnection | UploadFileAggregator | UploadFileGroupBy | UploadFileConnection_id | UploadFileConnectionName | UploadFileConnectionHash | UploadFileConnectionSha256 | UploadFileConnectionExt | UploadFileConnectionMime | UploadFileConnectionSize | UploadFileConnectionUrl | UploadFileConnectionProvider | UploadFileConnectionPublic_id | UsersPermissionsPermission | UsersPermissionsRole | createRolePayload | updateRolePayload | deleteRolePayload | UsersPermissionsRoleConnection | UsersPermissionsRoleAggregator | UsersPermissionsRoleGroupBy | UsersPermissionsRoleConnection_id | UsersPermissionsRoleConnectionName | UsersPermissionsRoleConnectionDescription | UsersPermissionsRoleConnectionType | UsersPermissionsUser | createUserPayload | updateUserPayload | deleteUserPayload | UsersPermissionsUserConnection | UsersPermissionsUserAggregator | UsersPermissionsUserGroupBy | UsersPermissionsUserConnection_id | UsersPermissionsUserConnectionUsername | UsersPermissionsUserConnectionEmail | UsersPermissionsUserConnectionProvider | UsersPermissionsUserConnectionConfirmed | UsersPermissionsUserConnectionBlocked | UsersPermissionsUserConnectionRole
 
 type Mutation {
   createDish(input: createDishInput): createDishPayload
@@ -294,8 +280,6 @@ type Mutation {
 
 type Order {
   _id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
   address: String
   city: String
   dishes: JSON
@@ -352,25 +336,13 @@ type OrderConnectionCity {
   connection: OrderConnection
 }
 
-type OrderConnectionCreatedAt {
-  key: DateTime
-  connection: OrderConnection
-}
-
 type OrderConnectionDishes {
   key: JSON
   connection: OrderConnection
 }
 
-type OrderConnectionUpdatedAt {
-  key: DateTime
-  connection: OrderConnection
-}
-
 type OrderGroupBy {
   _id: [OrderConnection_id]
-  createdAt: [OrderConnectionCreatedAt]
-  updatedAt: [OrderConnectionUpdatedAt]
   address: [OrderConnectionAddress]
   city: [OrderConnectionCity]
   dishes: [OrderConnectionDishes]
@@ -411,8 +383,6 @@ type Query {
 
 type Restaurant {
   _id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
   name: String
   description: String
   image: UploadFile
@@ -434,11 +404,6 @@ type RestaurantConnection_id {
   connection: RestaurantConnection
 }
 
-type RestaurantConnectionCreatedAt {
-  key: DateTime
-  connection: RestaurantConnection
-}
-
 type RestaurantConnectionDescription {
   key: String
   connection: RestaurantConnection
@@ -454,15 +419,8 @@ type RestaurantConnectionName {
   connection: RestaurantConnection
 }
 
-type RestaurantConnectionUpdatedAt {
-  key: DateTime
-  connection: RestaurantConnection
-}
-
 type RestaurantGroupBy {
   _id: [RestaurantConnection_id]
-  createdAt: [RestaurantConnectionCreatedAt]
-  updatedAt: [RestaurantConnectionUpdatedAt]
   name: [RestaurantConnectionName]
   description: [RestaurantConnectionDescription]
   image: [RestaurantConnectionImage]
@@ -533,8 +491,6 @@ scalar Upload
 
 type UploadFile {
   _id: ID!
-  createdAt: DateTime!
-  updatedAt: DateTime!
   name: String!
   hash: String!
   sha256: String
@@ -559,11 +515,6 @@ type UploadFileConnection {
 
 type UploadFileConnection_id {
   key: ID
-  connection: UploadFileConnection
-}
-
-type UploadFileConnectionCreatedAt {
-  key: DateTime
   connection: UploadFileConnection
 }
 
@@ -607,11 +558,6 @@ type UploadFileConnectionSize {
   connection: UploadFileConnection
 }
 
-type UploadFileConnectionUpdatedAt {
-  key: DateTime
-  connection: UploadFileConnection
-}
-
 type UploadFileConnectionUrl {
   key: String
   connection: UploadFileConnection
@@ -619,8 +565,6 @@ type UploadFileConnectionUrl {
 
 type UploadFileGroupBy {
   _id: [UploadFileConnection_id]
-  createdAt: [UploadFileConnectionCreatedAt]
-  updatedAt: [UploadFileConnectionUpdatedAt]
   name: [UploadFileConnectionName]
   hash: [UploadFileConnectionHash]
   sha256: [UploadFileConnectionSha256]
